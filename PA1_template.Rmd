@@ -1,8 +1,10 @@
 ---
-title: "Reproducible Research : Course Project 1"
-author: "Created by Jessie on February 7, 2016"
-output: html_document  
+title: "Reproducible Research: Peer Assessment 1"
+output: 
+  html_document:
+    keep_md: true
 ---
+
 Basic Setting
 ==============
 Make the code always visible
@@ -15,7 +17,7 @@ Loading and preprocessing the data
 I use the read.csv() function to read in the designated csv file. 
 I used the str() function to check the class types of the data.
 ```{r}
-unzip("repdata-data-activity.zip")
+unzip("activity.zip")
 rawdata <- read.csv("activity.csv")
 str(rawdata)
 ```

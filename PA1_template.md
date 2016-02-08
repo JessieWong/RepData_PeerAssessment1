@@ -1,8 +1,5 @@
----
-title: "Reproducible Research : Course Project 1"
-author: "Created by Jessie on February 7, 2016"
-output: html_document  
----
+# Reproducible Research: Peer Assessment 1
+
 Basic Setting
 ==============
 Make the code always visible
@@ -17,7 +14,7 @@ I use the read.csv() function to read in the designated csv file.
 I used the str() function to check the class types of the data.
 
 ```r
-unzip("repdata-data-activity.zip")
+unzip("activity.zip")
 rawdata <- read.csv("activity.csv")
 str(rawdata)
 ```
@@ -54,7 +51,7 @@ data <- tapply(rawdata$steps, rawdata$date, FUN = sum, na.rm = TRUE)
 hist(data,col="lightblue", main="Total Number of Steps Taken Per Day", xlab="Total steps by date", ylab="Frequency")
 ```
 
-![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-4-1.png) 
 
 The mean and median of the total number of steps taken per day.
 
@@ -88,7 +85,7 @@ plot(average_steps$interval, average_steps$steps,
      ylab="Average steps")
 ```
 
-![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-6-1.png) 
 
 Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -137,7 +134,7 @@ hist(x=new,
      main="The distribution of daily total (with missing data imputed)")
 ```
 
-![plot of chunk unnamed-chunk-10](figure/unnamed-chunk-10-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-10-1.png) 
 
 Do these values differ from the estimates from the first part of the assignment?  
 Yes. The mean changed from 9354 to 10766. The median changed from 10395 to 10766.  
@@ -178,7 +175,7 @@ plotdata <- aggregate(steps ~ interval + weekend, filledinNA, mean)
 xyplot(steps ~ interval | factor(weekend), data=plotdata, aspect=1/3, type="l")
 ```
 
-![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-12-1.png) 
 
 Yes.The time plot shows that there is more activities after the 1000 time interval on the weekend compare to the weekday. Weekday activities arise mostly after 500 time interval and it's arise earlier than the weekends.  
 
